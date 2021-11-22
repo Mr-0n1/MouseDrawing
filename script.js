@@ -3,8 +3,8 @@ var area = canva.getContext("2d");
 var isPressed = false;
 var x;
 var y;
-var thick = 3;
-var color = "red";
+var thick = document.getElementById("thickness");
+var color = document.getElementById("color_palette");
 
 
 canva.addEventListener("mousedown", mouseDown);
@@ -20,8 +20,8 @@ draw("black", 300, 0, 0, 0, area);
 
 function draw(color, xi, yi, xf, yf, c){
     c.beginPath(); 
-    c.strokeStyle = color;
-    c.lineWidth = thick; 
+    c.strokeStyle = color.value;
+    c.lineWidth = thick.value; 
     c.moveTo(xi, yi); 
     c.lineTo(xf, yf); 
     c.stroke(); 
